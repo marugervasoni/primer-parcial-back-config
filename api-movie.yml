@@ -2,6 +2,9 @@ server:
   port: 0
 
 spring:
+  zipkin:
+    base-url: http://localhost:9411/
+    enabled: true
   application:
     name: api-movie
   datasource:
@@ -38,7 +41,7 @@ spring:
             - java.io.IOException
             - java.net.SocketTimeoutException
         instances:
-          retryCustomer:
+          retryMovie:
             base-config: default
             max-retry-attempts: 5
             wait-duration: 2s
@@ -55,7 +58,7 @@ spring:
           automatic-transition-from-open-to-half-open-enabled: true
           failure-rate-threshold: 50
       instances:
-        clientCustomer:
+        clientMovie:
           base-config: default
           sliding-window-type: COUNT_BASED
           sliding-window-size: 5
