@@ -11,16 +11,10 @@ spring:
     port: 5672
   zipkin:
     baseUrl: http://localhost:9411/
-  datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/movie_dev
-    username: ${USER_NAME}
-    password: ${PASSWORD}
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
-
   mongodb:
     embedded:
       version: 4.0.2
